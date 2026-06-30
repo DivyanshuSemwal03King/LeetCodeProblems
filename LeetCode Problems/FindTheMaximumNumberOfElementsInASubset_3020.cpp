@@ -4,6 +4,46 @@
 
 using namespace std;
 
+
+// JAVA CODE FOR REFERENCE
+// import java.util.Arrays;
+// import java.util.HashMap;
+// import java.util.Map;
+
+// class Solution {
+//     public int maximumLength(int[] nums) {
+//         Arrays.sort(nums);
+//         int ones = 0;
+//         int len = nums.length;
+//         int ans = 1;
+//         Map<Long, Integer> map = new HashMap<>();
+//         for (int i = 0; i < len; i++) {
+//             if (nums[i] == 1) {
+//                 ones++;
+//             }
+//             map.put(nums[i] * 1L, map.getOrDefault(nums[i] * 1L, 0) + 1);
+//         }
+//         // System.out.println(map);
+//         ans = ones % 2 == 0 ? ones - 1 : ones;
+//         for (int i = ones; i < len; i++) {
+//             long cur = nums[i];
+//             int cnt = 0;
+//             long next = cur * cur;
+//             while (map.get(cur) >= 2 && map.containsKey(next)) {
+//                 map.put(cur, map.get(cur) - 2);
+//                 cnt += 2;
+//                 cur = next;
+//                 next = cur * cur;
+//             }
+//             cnt++;
+
+//             ans = Math.max(cnt, ans);
+//         }
+
+//         return ans;
+//     }
+// }
+
 int maximumLength(vector<int> &nums)
 {
     unordered_map<long long,int> mp;
